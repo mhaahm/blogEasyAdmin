@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+{% import "Partials/macros.html.twig" as macro %}
+{% block body %}
+    {{ macro.breadcrumb('Home','Products List') }}
+    <div class="container">
+        <!--Content Section Start -->
+        <h3>Compare Products</h3>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr class="bg-default">
+                            <th>
+                                <h4>Name</h4></th>
+                            <th>
+                                <h4>Product description</h4></th>
+                            <th>
+                                <h4>Quantities</h4></th>
+                            <th>
+                                <h4>Unit of measure</h4>
+                            </th>
+                            <th>
+                                <h4>Price</h4>
+                            </th>
+                            <th>
+                                <h4>Categorys</h4>
+                            </th>
+                            <th>
+                                <h4>Fournisseur</h4>
+                            </th>
+                            <th>
+                                <h4>Details</h4>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for article in articles %}
+                            <tr>
+                                <td>{{ article.libele }}</td>
+                                <td>{{ article.description }}</td>
+                                <td>{{ article.quantite }}</td>
+                                <td>{{ article.uniteMesure }}</td>
+                                <td>{{ article.prix }}</td>
+                                <td>{{ article.categorie.name }}</td>
+                                <td>{{ article.fournisseur.name }}</td>
+                                <td>
+                                    <a href="{{ path('article.edit',{'id':article.id}) }}" class="btn btn-responsive button-alignment btn-success">Edit</a>
+                                    <a href="{{ path('article.show',{'id':article.id}) }}" class="btn btn-responsive button-alignment btn-info">Show</a>
+                                    <a href="" class="btn btn-responsive button-alignment btn-danger">delete</a>
+
+                                </td>
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- //Content Section End -->
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% set active='Articles' %}
+{% extends 'base.html.twig' %}
+{% import "Partials/macros.html.twig" as macro %}
+{% block title %}
+ New Article
+{% endblock %}
+{% block body %}
+    {{  macro.breadcrumb('Article','New Article') }}
+    <div class="container col-lg-offset-1">
+        {%  include 'Partials/articleForm.html.twig' with {'update': '0'}  %}
+    </div>
+{% endblock %}

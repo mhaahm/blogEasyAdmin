@@ -1,0 +1,21 @@
+{% extends '@EasyAdmin/default/edit.html.twig' %}
+
+{% block main %}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit.Abalias
+aspernatur dignissimos dolores facere labore laboriosam maxime minus
+modi molestiae mollitia obcaecati, placeat quae, repellat tempora voluptates voluptatum! Ducimus, tempora?
+
+
+    {% block entity_form %}
+        {{ form_start(form) }}
+            <div class="row">
+                <div class="col-sm-4">
+                    {{ form_row(form.name) }}
+                </div>
+                <div class="col-sm-4">
+                    {{ form_row(form.slug) }}
+                </div>
+            </div>
+        {{ form_end(form) }}
+    {% endblock entity_form %}
+{% endblock %}

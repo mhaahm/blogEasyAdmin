@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% import "Partials/macros.html.twig" as macro %}
+{% block title %}Show Article{% endblock %}
+
+{% block body %}
+{{ macro.breadcrumb('Dashboard','Single Product') }}
+    <div class="container">
+        <!--item view start-->
+<br><br>
+        <div class="row">
+            <div class="mart10">
+                <!--product view-->
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="product_wrapper">
+                            {% if article.imageName is defined %}
+                                 <img id="zoom_09" src="{{ vich_uploader_asset(article,'imageFile') }}" data-zoom-image="http://material.joshadmin.com/assets/images/cart/big/1.jpg" class="img-responsive" />
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <!--individual product description-->
+                <div class="col-md-8">
+                    <h2 class="text-primary">{{ article.libele }}</h2>
+                    <p><b>Description</b></p>
+                    <p>{{ article.description }}</p>
+                    <p><b>Prix unitaire</b></p>
+                    <div class="text-big4">{{ article.prix }}</div>
+                    <p><b>Quantity</b></p>
+                    <h4>{{ article.quantite }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

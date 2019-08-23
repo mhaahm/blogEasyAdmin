@@ -1,0 +1,19 @@
+{% macro breadcrumb(title1,title2) %}
+    <div class="breadcum">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="{{ path('index') }}">    <i class="fa fa-home icon3" ></i>{{ title1 }}
+                    </a>
+                </li>
+                <li class="hidden-xs">
+                    <i class="fa fa-angle-double-right icon3 text-success"></i>
+                    <a href="{{ path('index') }}">{{ title2 }}</a>
+                </li>
+            </ol>
+            <div class="pull-right">
+                <i class="fa fa-pencil-square-o icon3 " ></i> {{ title2 }}
+            </div>
+        </div>
+    </div>
+{% endmacro %}

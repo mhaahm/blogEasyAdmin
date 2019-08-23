@@ -1,0 +1,24 @@
+index:
+    path: /
+    controller: App\Controller\HomeController::home
+
+article.show:
+    path: /showArticle/{id}
+    controller: App\Controller\ArticleController::showArticle
+    requirements:
+        id: \d+
+
+article.new:
+    path: /newArticle
+    controller: App\Controller\ArticleController::newArticle
+
+article.edit:
+    path: /editArticle/{id}
+    controller: App\Controller\ArticleController::editArticle
+    requirements:
+        id: \d+
+
+
+transation.entre:
+    path: /entre
+    controller: App\Controller\TransactionController::entre

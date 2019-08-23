@@ -1,0 +1,40 @@
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-md-3">
+        {{ form_row(form.libele) }}
+    </div>
+    <div class="col-md-3">
+        {{ form_row(form.quantite) }}
+    </div>
+    <div class="col-md-3">
+        {{ form_row(form.fournisseur) }}
+    </div>
+    <div class="col-md-3">
+        {{ form_row(form.categorie) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        {{ form_row(form.description) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        {{ form_row(form.prix) }}
+    </div>
+    <div class="col-md-3">
+        {{ form_row(form.UniteMesure) }}
+    </div>
+    <div class="col-md-3">
+        {{ form_row(form.imageFile) }}
+    </div>
+    <div class="col-md-3">
+        <button type="submit" class="btn btn-info" style="float: left;margin-top: 31px;"><i class="fa fa-save"></i>{{ update ? 'Update' : 'Save new ' }} </button>
+        <button type="reset" class="btn btn-danger" style="margin-top: 31px;"><i class="fa fa-save"></i>Reset</button>
+    </div>
+</div>
+
+<div class="row">
+
+</div>
+{{ form_end(form) }}
